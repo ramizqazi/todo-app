@@ -50,7 +50,6 @@ const TextInput = ({
       <View
         style={[
           styles.content,
-          !!errorText && styles.error,
           contentContainerStyle,
         ]}>
         {left}
@@ -65,7 +64,7 @@ const TextInput = ({
           ]}
           editable={editable}
           selectionColor="#8A93A0"
-          placeholderTextColor="#d1d1d1"
+          placeholderTextColor="#999"
           placeholder={placeholder}
           onChangeText={_handleChange}
           {...props}
@@ -82,15 +81,14 @@ TextInput.defaultProps = {
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    marginTop: 17,
+    width: '80%',
     backgroundColor: 'transparent',
   },
   content: {
     height: 49,
     width: '100%',
     borderWidth: 1,
-    borderRadius: 7,
+    borderRadius: 10,
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 12,

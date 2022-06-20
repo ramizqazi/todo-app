@@ -18,8 +18,6 @@ const Button = ({ loading, title, variant, size, style, btnTxtStyles, onPress })
       styles.container,
       size === 'sm' && styles.sm,
       size === 'lg' && styles.lg,
-      variant === 'primary' && styles.primary,
-      variant === 'secondary' && styles.secondary,
       style,
     ]}
       onPress={_handlePress}
@@ -29,8 +27,6 @@ const Button = ({ loading, title, variant, size, style, btnTxtStyles, onPress })
         <Text
           style={[
             styles.title,
-            variant === 'primary' && styles.titlePrimary,
-            variant === 'secondary' && styles.titleSecondary,
             btnTxtStyles
           ]}>
           {title}
@@ -40,49 +36,24 @@ const Button = ({ loading, title, variant, size, style, btnTxtStyles, onPress })
   );
 };
 
-Button.defaultProps = {
-  variant: 'primary',
-  size: 'lg'
-}
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 100,
+    height: 49,
+    borderRadius: 5,
+    paddingHorizontal: 20,
+    paddingVertical: 7,
     position: 'relative',
     flexDirection: 'row',
     alignItems: 'center',
+    marginLeft: 5,
     justifyContent: 'center',
-  },
-  primary: {
-    borderWidth: 1,
-    // borderColor: Colors.primary,
-    // backgroundColor: Colors.primary,
-  },
-  secondary: {
-    borderWidth: 1,
-    // borderColor: Colors.primary,
-    backgroundColor: 'transparent',
-  },
-  lg: {
-    width: '100%',
-    paddingVertical: 16,
-  },
-  sm: {
-    width: 190,
-    paddingVertical: 13,
+    backgroundColor: '#0091D6'
   },
   title: {
-    fontSize: 14,
+    fontSize: 16,
+    color: '#fff',
     textAlign: 'center',
-    // color: Colors.white,
-    fontFamily: 'Poppins-SemiBold',
-  },
-  titlePrimary: {
-    // color: Colors.white,
-    fontFamily: 'Poppins-SemiBold',
-  },
-  titleSecondary: {
-    // color: Colors.primary,
     fontFamily: 'Poppins-SemiBold',
   },
 });
